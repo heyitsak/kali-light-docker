@@ -1,0 +1,17 @@
+version: '3'
+services:
+  kali:
+    build: .
+    cap_add:
+      - NET_ADMIN
+    stdin_open: true
+    tty: true
+    hostname: pentestbox.com
+    ports:
+      - "8443:8443"
+      - "80:80"
+      - "443:443"
+      - "2121:2121"
+    volumes:
+      - ./mnt/:/data`/
+      - ./config:/config/
